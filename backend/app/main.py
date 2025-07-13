@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app import models, schema, crud
-from app.database import SessionLocal, engine, Base
+from backend.app import models, schema, crud
+from backend.app.database import SessionLocal, engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
@@ -29,6 +29,6 @@ def get_band(band_name: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Band not found")
     return band
 
-@app.post("/band", )
+@app.post("/band")
 def create_band(band: schema.Band):
     return band

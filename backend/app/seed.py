@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.database import SessionLocal, engine, Base
-from app.models import Band
+from backend.app.database import SessionLocal, engine, Base
+from backend.app.models import Band
 
 # Recreate tables (optional but useful during development)
 Base.metadata.drop_all(bind=engine)

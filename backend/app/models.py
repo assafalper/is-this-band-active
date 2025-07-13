@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from app.database import Base
+from backend.app.database import Base
 
 class Band(Base):
     __tablename__ = "bands"
