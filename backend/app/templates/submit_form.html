@@ -1,0 +1,29 @@
+<!-- app/templates/submit_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Submit a Band</title>
+</head>
+<body>
+  <h1>Submit a Band for Review</h1>
+  <form action="/submit-form/" method="post">
+    <label for="name">Band Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label for="active">Is the band active?</label><br>
+    <select name="active">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select><br><br>
+
+    <label for="last_album_title">Last Album Title:</label><br>
+    <input type="text" name="last_album_title"><br><br>
+
+    <label for="last_album_year">Last Album Year:</label><br>
+    <input type="number" name="last_album_year"><br><br>
+
+    <button type="submit">Submit Band</button>
+  </form>
+</body>
+</html>

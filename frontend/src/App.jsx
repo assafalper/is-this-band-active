@@ -58,6 +58,9 @@ export default function App() {
       {!loading && status?.notFound && (
         <p className="text-xl text-gray-600">🚫 Band not found.</p>
       )}
+      <a href="https://is-this-band-active.onrender.com/submit" target="_blank" rel="noopener noreferrer">
+  Submit a Band
+</a>
     </div>
   );
 }
