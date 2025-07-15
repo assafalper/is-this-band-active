@@ -11,7 +11,7 @@ export default function App() {
     setStatus(null);
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/band/${encodeURIComponent(bandName)}`);
+      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/band/${encodeURIComponent(bandName)}`);
       if (!res.ok) throw new Error('Band not found');
       const data = await res.json();
       setStatus(data);
