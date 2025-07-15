@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from backend.app.database import SessionLocal, engine, Base
+from app.database import SessionLocal, engine, Base
 from app.models import Band
 
 # Recreate tables (optional but useful during development)
