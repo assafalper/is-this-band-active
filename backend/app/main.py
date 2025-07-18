@@ -9,15 +9,16 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from app import schema, crud
 from app.database import SessionLocal, engine, Base
-from app.models import BandSubmission
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import upload, admin
-
+from app.routers.upload import router as upload_router
+from app.routers.admin import router as admin_router
 
 
 app = FastAPI()
-app.include_router(upload.router)
-app.include_router(admin.router)
+
+app.include_router(upload_router)
+app.include_router(admin_router)
+
 Base.metadata.create_all(bind=engine)
 templates = Jinja2Templates(directory="app/templates")
 
