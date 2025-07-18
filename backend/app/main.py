@@ -11,7 +11,7 @@ from app import schema, crud
 from app.database import SessionLocal, engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers.upload import router as upload_router
-from app.routers.admin import router as admin_router
+from backend.app.routers.band_admin import router as admin_router
 
 
 app = FastAPI()
