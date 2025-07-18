@@ -11,7 +11,7 @@ from app import schema, crud
 from app.database import SessionLocal, engine, Base
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers.upload import router as upload_router
-from app.routers.band_admin import router as admin_router
+from app.routers.admin import router as admin_router
 
 app = FastAPI()
 
@@ -45,7 +45,6 @@ def get_band(band_name: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Band not found")
     return band
 
-# Final fallback: serve React app for all other frontend routes
 @app.get("/{full_path:path}", response_class=FileResponse)
 def serve_react_app(request: Request):
     return FileResponse("app/dist/index.html")
