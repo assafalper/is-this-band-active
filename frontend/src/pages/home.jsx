@@ -62,7 +62,7 @@ export default function Home() {
         <p className="text-xl text-gray-600">🚫 Band not found.</p>
       )}
 
-      <Link to="/submit" className="text-blue-400 hover:underline mt-6">
+      <Link to="/submit" className="text-white-400 hover:underline mt-6">
         Submit a Band
       </Link>
     </div>
