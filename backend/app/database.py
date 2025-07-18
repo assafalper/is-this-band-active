@@ -1,17 +1,17 @@
-import os
-from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
+# Replace with your actual connection string
+SQLALCHEMY_DATABASE_URL = "postgresql://user:password@host/dbname"
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-if DATABASE_URL:
-  engine = create_engine(DATABASE_URL)
-else:
-    raise Exception('missing DATABASE URL')
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
+
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Dependency for injection
+Base = declarative_base()
+
+# Optional: Dependency for FastAPI routes
 def get_db():
     db = SessionLocal()
     try:
