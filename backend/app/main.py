@@ -13,7 +13,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.upload import router as upload_router
 from app.routers.band_admin import router as admin_router
 
-
 app = FastAPI()
 
 app.include_router(upload_router)
@@ -22,8 +21,6 @@ app.include_router(admin_router)
 Base.metadata.create_all(bind=engine)
 templates = Jinja2Templates(directory="app/templates")
 
-
-# Serve static files (JS, CSS, etc.)
 app.mount("/assets", StaticFiles(directory="app/dist/assets"), name="assets")
 
 app.add_middleware(
@@ -41,12 +38,6 @@ def get_db():
     finally:
         db.close()
 
-
-# Serve index.html at root
-@app.get("/")
-def serve_index():
-    return FileResponse("app/dist/index.html")
-
 @app.get("/band/{band_name}", response_model=schema.Band)
 def get_band(band_name: str, db: Session = Depends(get_db)):
     band = crud.get_band_by_name(db, band_name)
@@ -54,7 +45,8 @@ def get_band(band_name: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Band not found")
     return band
 
-@app.get("/submit", response_class=HTMLResponse)
-def show_submission_form(request: Request):
-    return templates.TemplateResponse("submit_form.html", {"request": request})
+# Final fallback: serve React app for all other frontend routes
+@app.get("/{full_path:path}", response_class=FileResponse)
+def serve_react_app(request: Request):
+    return FileResponse("app/dist/index.html")
 
