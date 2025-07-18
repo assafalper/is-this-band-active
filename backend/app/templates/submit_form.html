@@ -1,4 +1,3 @@
-<!-- app/templates/submit_form.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,8 +5,10 @@
   <title>Submit a Band</title>
 </head>
 <body>
-  <h1>Submit a Band for Review</h1>
-  <form action="/submit-form/" method="post">
+  <h1>Submit a Band</h1>
+  <form action="/submit" method="post">
+    <input type="hidden" name="mode" value="single">
+    
     <label for="name">Band Name:</label><br>
     <input type="text" name="name" required><br><br>
 
@@ -24,6 +25,15 @@
     <input type="number" name="last_album_year"><br><br>
 
     <button type="submit">Submit Band</button>
+  </form>
+
+  <hr>
+
+  <h2>Or Upload a CSV</h2>
+  <form action="/submit" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="mode" value="csv">
+    <input type="file" name="csv_file" accept=".csv" required>
+    <button type="submit">Upload CSV</button>
   </form>
 </body>
 </html>
