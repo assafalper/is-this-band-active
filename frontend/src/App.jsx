@@ -5,7 +5,7 @@ import SubmitBand from './pages/SubmitBand';
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<home />} />
       <Route path="/submit" element={<SubmitBand />} />
     </Routes>
   );
