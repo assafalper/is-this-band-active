@@ -65,6 +65,9 @@ export default function Home() {
       <Link to="/submit" className="text-white-400 hover:underline mt-6">
         Submit a Band
       </Link>
+      <Link to="/admin/review" className="text-blue-400 hover:underline mt-2 block">
+  Review Submissions (Admin)
+</Link>
     </div>
   );
 }
