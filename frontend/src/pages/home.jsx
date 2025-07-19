@@ -14,7 +14,7 @@ export default function Home() {
     setStatus(null);
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/band/${encodeURIComponent(bandName)}`);
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/band/${encodeURIComponent(bandName)}`);
       if (!res.ok) throw new Error('Band not found');
       const data = await res.json();
       setStatus(data);
@@ -65,7 +65,7 @@ export default function Home() {
       <Link to="/submit" className="text-blue-100 hover:underline mt-6">
         Submit a Band
       </Link>
-      <Link to="/admin/review" className="text-blue-100 hover:underline mt-2 block">
+      <Link to="/admin/review/" className="text-blue-100 hover:underline mt-2 block">
   Review Submissions (Admin)
 </Link>
     </div>

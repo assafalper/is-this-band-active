@@ -8,7 +8,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/submit" element={<SubmitBand />} />
-      <Route path="/admin/review" element={<ReviewSubmissions />} />
+      <Route path="/admin/review/" element={<ReviewSubmissions />} />
       
     </Routes>
   );

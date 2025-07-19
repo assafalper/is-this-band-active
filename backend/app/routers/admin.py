@@ -1,10 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
+
 from app.database import get_db
 from app.models import Band, BandSubmission
-
-print("✅ admin.py loaded — correct file")
-print("✅ router =", 'router' in globals())
 
 router = APIRouter()
 
