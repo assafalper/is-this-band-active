@@ -26,19 +26,19 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-gray-200">
-      <h1 className="text-7xl font-bold mb-8 text-grey-700">Is This Band Active?</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black">
+      <h1 className="text-7xl font-bold mb-8 text-white">Is This Band Active?</h1>
       <div className="flex gap-2 mb-6">
         <input
           type="text"
           value={bandName}
           onChange={(e) => setBandName(e.target.value)}
           placeholder="Enter band name..."
-          className="px-4 py-2 border border-gray-300 rounded-md w-80 text-lg"
+          className="px-4 py-2 border border-gray-200 rounded-md w-80 text-lg text-red"
         />
         <button
           onClick={checkBand}
-          className="bg-red-600 text-white px-4 py-2 rounded-md text-lg hover:bg-red-700"
+          className="bg-red-600 text-black px-4 py-2 rounded-md text-lg hover:bg-red-700"
         >
           Search
         </button>
@@ -62,10 +62,10 @@ export default function Home() {
         <p className="text-xl text-gray-600">🚫 Band not found.</p>
       )}
 
-      <Link to="/submit" className="text-white-400 hover:underline mt-6">
+      <Link to="/submit" className="text-blue-100 hover:underline mt-6">
         Submit a Band
       </Link>
-      <Link to="/admin/review" className="text-blue-400 hover:underline mt-2 block">
+      <Link to="/admin/review" className="text-blue-100 hover:underline mt-2 block">
   Review Submissions (Admin)
 </Link>
     </div>
