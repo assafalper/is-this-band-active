@@ -38,7 +38,7 @@ export default function Home() {
         />
         <button
           onClick={checkBand}
-          className="bg-red-600 text-black px-4 py-2 rounded-md text-lg hover:bg-red-700"
+          className="bg-red-600 text-white px-4 py-2 rounded-md text-lg hover:bg-red-700"
         >
           Search
         </button>
