@@ -5,6 +5,7 @@ export default function ReviewSubmissions() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("API base URL 123:", process.env.REACT_APP_API_BASE_URL);
     fetch(`${process.env.REACT_APP_API_BASE_URL}/admin/review/`)
       .then((res) => res.json())
       .then((data) => setSubmissions(data))
@@ -13,6 +14,7 @@ export default function ReviewSubmissions() {
   }, []);
 
   const handleAction = async (id, action) => {
+    console.log("API base URL:", process.env.REACT_APP_API_BASE_URL);
     const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/admin/review/${id}/${action}`, {
       method: "POST",
     });
