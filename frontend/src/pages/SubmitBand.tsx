@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Layout from '../components/Layout';
 
 export default function SubmitBand() {
   const [message, setMessage] = useState("");
@@ -21,6 +22,7 @@ export default function SubmitBand() {
   };
 
   return (
+    <Layout>
     <div className="max-w-xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Submit a Band</h1>
 
@@ -60,5 +62,5 @@ export default function SubmitBand() {
 
       {message && <p className="mt-4 text-green-600">{message}</p>}
     </div>
-  );
+  </Layout>);
 }

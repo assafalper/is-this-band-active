@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Layout from '../components/Layout';
 
 export default function ReviewSubmissions() {
   const [submissions, setSubmissions] = useState([]);
@@ -28,6 +29,7 @@ export default function ReviewSubmissions() {
   if (loading) return <p className="p-4">Loading...</p>;
 
   return (
+    <Layout>
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Pending Submissions</h1>
       {submissions.length === 0 ? (
@@ -56,5 +58,6 @@ export default function ReviewSubmissions() {
         ))
       )}
     </div>
-  );
+  </Layout>);
 }
+

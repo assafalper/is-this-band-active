@@ -1,6 +1,7 @@
 // your original App.jsx code (with small change)
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
   };
 
   return (
+    <Layout>
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
       <h1 className="text-7xl font-bold mb-8 text-white">Is This Band Active?</h1>
       <div className="flex gap-2 mb-6">
@@ -47,7 +49,7 @@ export default function Home() {
       {loading && <p className="text-lg">Loading...</p>}
 
       {!loading && status && !status.notFound && (
-        <div className="text-center text-xl">
+        <div className="text-center text-xl text-white">
           {status.active ? (
             <p>✅ <strong>{status.name}</strong> is <span className="text-green-700 font-bold">active</span>.<br />
             Last album: <em>"{status.last_album_title}"</em> ({status.last_album_year})</p>
@@ -61,13 +63,6 @@ export default function Home() {
       {!loading && status?.notFound && (
         <p className="text-xl text-gray-600">🚫 Band not found.</p>
       )}
-
-      <Link to="/submit" className="text-blue-100 hover:underline mt-6">
-        Submit a Band
-      </Link>
-      <Link to="/admin/review/" className="text-blue-100 hover:underline mt-2 block">
-  Review Submissions (Admin)
-</Link>
     </div>
-  );
+  </Layout>);
 }
