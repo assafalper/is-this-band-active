@@ -2,7 +2,7 @@ fastapi
 Jinja2
 psycopg
 python-dotenv
-
+psycopg2
 python-multipart
 uvicorn
 sqlalchemy
