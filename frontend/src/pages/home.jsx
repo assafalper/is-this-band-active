@@ -36,7 +36,7 @@ export default function Home() {
           value={bandName}
           onChange={(e) => setBandName(e.target.value)}
           placeholder="Enter band name..."
-          className="px-4 py-2 border border-gray-200 rounded-md w-80 text-lg text-red"
+          className="px-4 py-2 border border-gray-200 rounded-md w-80 text-lg text-black"
         />
         <button
           onClick={checkBand}

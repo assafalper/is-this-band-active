@@ -5,10 +5,13 @@ export default function Layout({ children, showTitle = false }) {
     <div className="relative min-h-screen bg-black text-gray-200 px-4 pt-20">
       {/* Top-left navigation */}
       <div className="absolute top-4 left-4 flex gap-4">
+        <Link to="/" className="text-blue-400 hover:underline">
+          Main Page
+        </Link>
         <Link to="/submit" className="text-blue-400 hover:underline">
           Submit a Band
         </Link>
-        <Link to="/admin" className="text-blue-400 hover:underline">
+        <Link to="/admin/review" className="text-blue-400 hover:underline">
           Admin Review
         </Link>
       </div>

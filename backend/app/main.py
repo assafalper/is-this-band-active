@@ -18,7 +18,7 @@ app = FastAPI()
 app.include_router(upload_router)
 app.include_router(admin_router)
 
-Base.metadata.create_all(bind=engine)
+
 templates = Jinja2Templates(directory="app/templates")
 
 app.mount("/assets", StaticFiles(directory="app/dist/assets"), name="assets")
